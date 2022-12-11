@@ -6,7 +6,7 @@ class Schema(models.Model):
     SEPARATORS = [
         (",", "Comma(,)"),
         (";", "Semicolon(;)"),
-        ("\t", "Tab(\t)"),
+        ("\t", "Tab(\\t)"),
         (" ", "Space( )"),
         ("|", "Pipe(|)"),
     ]

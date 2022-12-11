@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
 from csv_data_work.models import Schema
@@ -15,4 +16,10 @@ class SchemaListView(LoginRequiredMixin, generic.ListView):
     template_name = "csv_data_work/schema_list.html"
     context_object_name = "schema_list"
 
+
+class SchemaCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Schema
+    fields = "__all__"
+    success_url = reverse_lazy("csv_data_work:schema-list")
+    template_name = "csv_data_work/schema_form.html"
 
