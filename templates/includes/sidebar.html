@@ -1,6 +1,11 @@
 <div class="topnav">
   <h1 class="nav-element">FakeCSV</h1>
   <a class="nav-element" href="">Schemas</a>
-  <p class="nav-element">Hello, User</p>
-  <p class="nav-element">Logout</p>
+
+  {% if user.is_authenticated %}
+    <p class="nav-element">Hello, {{ user.get_username }}</p>
+    <a href="{% url 'logout' %}" class="nav-element">Logout</a>
+  {% else %}
+    <a href="{% url 'login' %}" class="nav-element">Login</a>
+  {% endif %}
 </div>

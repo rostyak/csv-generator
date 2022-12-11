@@ -2,14 +2,16 @@
     text-align: center;
     background-color: lightgrey;
 }
-
 .nav-element {
     /*margin: 30px;*/
     color: black;
-    padding: 5px;
 }
 
 .content {
     background-color: white;
     margin: 25px;
+}
+
+.login-logout {
+    text-align: center;
 }
