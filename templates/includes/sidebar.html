@@ -1,7 +1,6 @@
 <div class="topnav">
   <h1 class="nav-element">FakeCSV</h1>
-  <a class="nav-element" href="">Schemas</a>
-
+  <a class="nav-element" href="{% url 'csv_data_work:schema-list' %}">Schemas</a>
   {% if user.is_authenticated %}
     <p class="nav-element">Hello, {{ user.get_username }}</p>
     <a href="{% url 'logout' %}" class="nav-element">Logout</a>

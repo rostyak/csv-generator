@@ -4,14 +4,23 @@
 }
 .nav-element {
     /*margin: 30px;*/
-    color: black;
 }
 
 .content {
     background-color: white;
     margin: 25px;
+    padding: 20px;
 }
 
 .login-logout {
     text-align: center;
+}
+
+.index-text {
+    text-align: center;
+}
+
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
 }

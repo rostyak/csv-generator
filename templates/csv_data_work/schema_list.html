@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Data schemas
+    <a href="" class="btn btn-primary link-to-page">
+      New schema
+    </a>
+  </h1>
+  {% if schema_list %}
+    <table class="table">
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Modified</th>
+        <th>Actions</th>
+      </tr>
+    </table>
+    {% for schema in schema_list%}
+      <tr>
+        <td>{{ schema.id }}</td>
+        <td>{{ schema.name }}</td>
+        <td>{{ schema.modified }}</td>
+        <td>
+          <a class="btn btn-success" href="">Edit scheme</a>
+          <a class="btn btn-danger" href="">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  {% else %}
+    <h1>Sorry, data schemas list is empty.</h1>
+  {% endif %}
+{% endblock %}
