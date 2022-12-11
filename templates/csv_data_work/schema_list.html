@@ -24,7 +24,7 @@
         <td>
           <a class="text-primary" href="{% url 'csv_data_work:schema-update' pk=schema.id %}">Edit scheme</a>
           <br>
-          <a class="text-danger" href="">Delete</a>
+          <a class="text-danger" href="{% url 'csv_data_work:schema-delete' pk=schema.id %}">Delete</a>
         </td>
       </tr>
     {% endfor %}

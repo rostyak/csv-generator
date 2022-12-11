@@ -31,3 +31,11 @@ class SchemaUpdateView(LoginRequiredMixin, generic.UpdateView):
     template_name = "csv_data_work/schema_form.html"
 
 
+class SchemaDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Schema
+    fields = "__all__"
+    success_url = reverse_lazy("csv_data_work:schema-list")
+    template_name = "csv_data_work/schema_confirm_delete.html"
+
+
+
