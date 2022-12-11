@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3>
+    {{ schema.name }} &nbsp &nbsp &nbsp
+    <a class="text-primary" href="{% url 'csv_data_work:schema-update' pk=schema.id %}">Edit scheme</a>
+  </h3>
+
+{% endblock %}

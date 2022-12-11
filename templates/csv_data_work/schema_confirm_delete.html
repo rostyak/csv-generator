@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Delete schema</h1>
+  <br>
+  <h3>Ate you sure you want to delete schema "{{ schema.name }}"</h3>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete" class="btn btn-danger">
+    <a class="btn btn-primary" href="{% url "csv_data_work:schema-list" %}">No, Cancel</a>
+  </form>
+
+{% endblock %}
