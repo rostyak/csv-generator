@@ -15,6 +15,4 @@ class SchemaListView(LoginRequiredMixin, generic.ListView):
     template_name = "csv_data_work/schema_list.html"
     context_object_name = "schema_list"
 
-    def get_queryset(self):
-        self.queryset = self.queryset.filter(owner=self.request.user)
 

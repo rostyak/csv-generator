@@ -5,7 +5,7 @@ from django.db import models
 class Schema(models.Model):
     SEPARATORS = [
         (",", "Comma(,)"),
-        (";", "Semilicon(;)"),
+        (";", "Semicolon(;)"),
         ("\t", "Tab(\t)"),
         (" ", "Space( )"),
         ("|", "Pipe(|)"),
