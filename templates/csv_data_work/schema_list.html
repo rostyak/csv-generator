@@ -22,7 +22,7 @@
         <td>{{ schema.name }}</td>
         <td>{{ schema.modified }}</td>
         <td>
-          <a class="text-primary" href="">Edit scheme</a>
+          <a class="text-primary" href="{% url 'csv_data_work:schema-update' pk=schema.id %}">Edit scheme</a>
           <br>
           <a class="text-danger" href="">Delete</a>
         </td>

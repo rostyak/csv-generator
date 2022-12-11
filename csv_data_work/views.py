@@ -23,3 +23,11 @@ class SchemaCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("csv_data_work:schema-list")
     template_name = "csv_data_work/schema_form.html"
 
+
+class SchemaUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Schema
+    fields = "__all__"
+    success_url = reverse_lazy("csv_data_work:schema-list")
+    template_name = "csv_data_work/schema_form.html"
+
+
