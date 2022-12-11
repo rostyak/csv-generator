@@ -1,11 +1,12 @@
 from django.urls import path
 
 from csv_data_work.views import index, SchemaListView, SchemaCreateView, \
-    SchemaUpdateView, SchemaDeleteView
+    SchemaUpdateView, SchemaDeleteView, SchemaDetailView
 
 urlpatterns = [
     path("", index, name="index"),
     path("schemas/", SchemaListView.as_view(), name="schema-list"),
+    path("schemas/<int:pk>/", SchemaDetailView.as_view(), name="schema-detail"),
     path("schemas/create/", SchemaCreateView.as_view(), name="schema-create"),
     path(
         "schemas/<int:pk>/update",

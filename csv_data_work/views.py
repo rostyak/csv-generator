@@ -17,6 +17,10 @@ class SchemaListView(LoginRequiredMixin, generic.ListView):
     context_object_name = "schema_list"
 
 
+class SchemaDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Schema
+
+
 class SchemaCreateView(LoginRequiredMixin, generic.CreateView):
     model = Schema
     fields = "__all__"
