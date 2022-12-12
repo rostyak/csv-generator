@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.core.validators import MinValueValidator
 from django.db import models
 
 
@@ -29,3 +30,24 @@ class Schema(models.Model):
     owner = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, related_name="schemas"
     )
+
+    def __str__(self):
+        return self.name
+
+
+class Column(models.Model):
+    TYPES = [
+        ("Full name", "Full name (a combination of first name and last name)"),
+        ("Job", "Job"),
+        ("Email", "Email"),
+        ("Domain name", "Domain name"),
+        ("Phone number", "Phone number"),
+        ("Company name", "Company name"),
+    ]
+
+    column_name = models.CharField(max_length=255)
+    type = models.CharField(choices=TYPES, max_length=255)
+    order = models.PositiveIntegerField(default=0, blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.column_name} ({self.type})"
